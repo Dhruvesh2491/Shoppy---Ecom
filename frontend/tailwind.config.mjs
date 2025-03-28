@@ -75,9 +75,6 @@ export default {
       },
     },
   },
-<<<<<<< HEAD:frontend/tailwind.config.mjs
   plugins: [tailwindcssAnimate],
-=======
-  plugins: [require("tailwindcss-animate")],
->>>>>>> 02d16e5239c521a9126202709e9e8332f76cc2e3:frontend/tailwind.config.js
+  // plugins: [require("tailwindcss-animate")],
 };
