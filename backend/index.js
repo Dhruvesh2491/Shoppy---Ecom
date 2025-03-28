@@ -38,12 +38,16 @@ const __dirname = path.dirname(__filename);
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://shoppy-ecom.onrender.com",
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: ["Content-Type", "Authorization", "Cache-Control", "Expires", "Pragma"],
     credentials: true,
   })
 );
+
+console.log("Serving frontend from:", path.join(__dirname, "../frontend/dist"));
+console.log("Looking for index.html at:", path.resolve(__dirname, "../frontend/dist/index.html"));
+
 
 app.use(cookieParser());
 app.use(express.json());
