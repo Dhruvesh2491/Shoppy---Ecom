@@ -18,8 +18,10 @@ import shopSearchRouter from "./routes/shop/search-routes.js";
 import shopReviewRouter from "./routes/shop/review-routes.js";
 import commonFeatureRouter from "./routes/common/feature-routes.js";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-dotenv.config({ path: "./.env" });
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
 const port = process.env.PORT
 const MONGO = process.env.MONGO_URI;
@@ -31,10 +33,6 @@ mongoose
 
 const app = express();
 const PORT = 5000;
-
-// Resolve __dirname in ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 app.use(
   cors({
